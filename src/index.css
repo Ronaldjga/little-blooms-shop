@@ -2,95 +2,135 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Aurora Children's Clothing - Design System 
+Inspired by natural, botanical themes with earth tones
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Background & Text */
+    --background: 32 25% 97%; /* Warm cream */
+    --foreground: 140 20% 25%; /* Deep sage */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card Components */
+    --card: 0 0% 100%; /* Pure white cards */
+    --card-foreground: 140 20% 25%;
 
+    /* Popover Components */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 140 20% 25%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary Brand Colors - Sage Green */
+    --primary: 140 25% 55%; /* Main sage green */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 140 30% 75%; /* Light sage for hovers */
+    --primary-dark: 140 30% 35%; /* Dark sage for depth */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary Brand Colors - Terracotta */
+    --secondary: 25 55% 70%; /* Warm terracotta */
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 25 45% 85%; /* Light terracotta */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent Colors - Golden Yellow */
+    --accent: 45 85% 75%; /* Warm golden yellow */
+    --accent-foreground: 140 20% 25%;
+    --accent-light: 45 70% 90%; /* Very light yellow */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Coral/Peach Accent */
+    --coral: 15 65% 75%; /* Soft coral */
+    --coral-foreground: 0 0% 100%;
+    --coral-light: 15 45% 90%; /* Light coral */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Muted & Text Colors */
+    --muted: 32 20% 92%; /* Light warm beige */
+    --muted-foreground: 140 15% 45%; /* Medium sage */
+    --text-soft: 140 10% 60%; /* Soft text */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Neutral System */
+    --border: 32 15% 88%; /* Subtle warm border */
+    --input: 32 15% 88%;
+    --ring: 140 25% 55%; /* Focus ring matches primary */
 
-    --radius: 0.5rem;
+    /* Interactive States */
+    --destructive: 0 75% 65%;
+    --destructive-foreground: 0 0% 100%;
 
-    --sidebar-background: 0 0% 98%;
+    /* Design Tokens */
+    --radius: 0.75rem; /* Slightly more rounded for friendliness */
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Custom Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-warm: linear-gradient(135deg, hsl(var(--accent-light)), hsl(var(--coral-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted)));
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(var(--primary) / 0.1);
+    --shadow-hover: 0 8px 30px -4px hsl(var(--primary) / 0.15);
+    --shadow-card: 0 2px 15px -3px hsl(140 25% 55% / 0.08);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Core Background & Text - Dark Mode */
+    --background: 140 20% 8%; /* Deep sage dark */
+    --foreground: 32 25% 95%; /* Warm cream light */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Card Components - Dark Mode */
+    --card: 140 20% 10%; /* Slightly lighter than background */
+    --card-foreground: 32 25% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    /* Popover Components - Dark Mode */
+    --popover: 140 20% 10%;
+    --popover-foreground: 32 25% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Primary Brand Colors - Dark Mode Sage Green */
+    --primary: 140 35% 65%; /* Lighter sage for dark mode */
+    --primary-foreground: 140 20% 8%;
+    --primary-light: 140 40% 75%; 
+    --primary-dark: 140 30% 45%; 
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Secondary Brand Colors - Dark Mode Terracotta */
+    --secondary: 25 45% 60%; /* Adjusted terracotta for dark mode */
+    --secondary-foreground: 32 25% 95%;
+    --secondary-light: 25 35% 75%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Accent Colors - Dark Mode Golden Yellow */
+    --accent: 45 75% 65%; /* Adjusted golden yellow */
+    --accent-foreground: 140 20% 8%;
+    --accent-light: 45 60% 80%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Coral/Peach Accent - Dark Mode */
+    --coral: 15 55% 65%; /* Adjusted coral */
+    --coral-foreground: 32 25% 95%;
+    --coral-light: 15 35% 80%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Muted & Text Colors - Dark Mode */
+    --muted: 140 15% 15%; /* Dark sage muted */
+    --muted-foreground: 140 10% 70%; /* Light sage text */
+    --text-soft: 140 8% 65%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Neutral System - Dark Mode */
+    --border: 140 15% 20%; /* Darker border */
+    --input: 140 15% 20%;
+    --ring: 140 35% 65%; /* Focus ring matches primary */
+
+    /* Interactive States - Dark Mode */
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 32 25% 95%;
+
+    /* Custom Gradients - Dark Mode */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary-dark)), hsl(var(--primary)));
+    --gradient-warm: linear-gradient(135deg, hsl(var(--accent-light) / 0.3), hsl(var(--coral-light) / 0.3));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted)));
+
+    /* Shadows - Dark Mode */
+    --shadow-soft: 0 4px 20px -2px hsl(0 0% 0% / 0.3);
+    --shadow-hover: 0 8px 30px -4px hsl(0 0% 0% / 0.4);
+    --shadow-card: 0 2px 15px -3px hsl(0 0% 0% / 0.2);
   }
 }
 
